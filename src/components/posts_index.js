@@ -1,8 +1,11 @@
-import React,{Component} from 'react'
-
+import React,{Component} from 'react';
+import {Link} from 'react-router';
 class PostsIndex extends Component{
     render(){
-        return "loly"
+        return <div>
+       <Link to=""></Link>
+        </div>
+
     }
 }
 

@@ -1,6 +1,9 @@
-
-
-export default function(state=null,action){
-   return state;
+import {FETCH_POSTS} from '../actions/index'
+ const INTIAL_STATE = {all:[]}
+export default function(state=INTIAL_STATE,action){
+    switch(action.type){
+  case FETCH_POSTS: return {...state,all:action.payload.data};
+  default : return state;
+    }
 
 }
