@@ -1,6 +1,11 @@
 import React , {Component} from 'react';
-export  default class NewPost extends Component {
+import {reduxForm} from 'redux-form'
+ class NewPost extends Component {
     render (){
-        return(<div>new</div>)
+        return(<div></div>)
     }
 }
+
+export default reduxForm({
+form:'newPost'
+},null,null)(NewPost);
