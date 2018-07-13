@@ -1,9 +1,8 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router';
+//import {Link} from 'react-router'; <Link to=""></Link>
 class PostsIndex extends Component{
     render(){
         return <div>
-       <Link to=""></Link>
         </div>
 
     }
