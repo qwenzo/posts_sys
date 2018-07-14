@@ -1,10 +1,12 @@
 import React , {Component} from 'react';
-import {reduxForm} from 'redux-form'
+import {reduxForm} from 'redux-form';
+
+const CancelBtnStyle = {marginLeft:'1%'};
  class NewPost extends Component {
     render (){
         return(<div>
            <h3>New Post</h3>
-            <div  className="d-flex justify-content-around shadow p-3 mb-5 bg-white rounded">
+            <div  className="d-flex justify-content-around ">
         <form className="w-50">
             <div className="form-group">
                <label >title</label>
@@ -25,7 +27,8 @@ import {reduxForm} from 'redux-form'
                <label >content</label>
                <textarea className="form-control" />
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
+                <button style={CancelBtnStyle} className="btn btn-danger">Cancel</button>
             </form>
             </div> 
             </div>)
