@@ -27,3 +27,14 @@ export function createPost(props){
         payload:req
     }
 }
+
+
+export function getPost(id){
+    const URL = BASE_URL+API_KEY+`/${id}`;
+    const req = axios.get(URL);
+
+    return{
+        type:CREATE_POST,
+        payload:req
+    }
+}
