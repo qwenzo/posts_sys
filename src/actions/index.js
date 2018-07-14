@@ -30,7 +30,7 @@ export function createPost(props){
 
 
 export function getPost(id){
-    const URL = BASE_URL+API_KEY+`/${id}`;
+    const URL = BASE_URL+`/${id}`+API_KEY;
     const req = axios.get(URL);
 
     return{
