@@ -1,9 +1,10 @@
-import {FETCH_POSTS,CREATE_POST} from '../actions/index'
- const INTIAL_STATE = {all:[]}
+import {FETCH_POSTS} from '../actions/index'
+ const INTIAL_STATE = {all:[],lol:null};
 export default function(state=INTIAL_STATE,action){
     switch(action.type){
   case FETCH_POSTS: return {...state,all:action.payload.data};
   default : return state;
     }
+
 
 }
