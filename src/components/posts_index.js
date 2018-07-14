@@ -16,9 +16,11 @@ class PostsIndex extends Component{
       return ( <Link key={post.id} to ={`/posts/${post.id}`}><li  className="list-group-item list-group-item-action ">{post.title}<span className="float-right">jjj</span></li></Link>)
     }
     render(){
+        const posts = this.props.posts;
+       
         return <div  className="d-flex mx-auto">
             <div  className="list-group w-50 ">
-          {this.props.posts.map(this.MappingList)}
+          {posts ? posts.map(this.MappingList):'Loading...'}
      
    </div>
         </div>
