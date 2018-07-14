@@ -3,8 +3,8 @@ import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {fetchPosts} from '../actions/index';
 
-const NewPostStyle ={margin:'1% 1%'};
-const ListStyle ={margin:'1%'};
+
+const ListStyle = {marginTop:'5%'};
 class PostsIndex extends Component{
     componentWillMount(){
        // posts =; {this.props.posts.map(this.MappingList(props))}
@@ -16,9 +16,8 @@ class PostsIndex extends Component{
       return ( <Link to ={`/posts/${post.id}`}><li key={post.id} className="list-group-item list-group-item-action ">{post.title}<span className="float-right">jjj</span></li></Link>)
     }
     render(){
-        return <div>
-            <Link to="/posts/new"><div style ={NewPostStyle} className="float-right"><button className="btn btn-primary">New Post</button></div></Link>
-            <div style ={ListStyle} className="list-group w-50 ">
+        return <div style ={ListStyle} className="d-flex justify-content-center">
+            <div  className="list-group w-50 ">
           {this.props.posts.map(this.MappingList)}
      
    </div>
