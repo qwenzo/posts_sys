@@ -2,15 +2,21 @@ import React , {Component} from 'react';
 import {connect} from 'react-redux';
 import {getPost,deletePost} from '../actions/index'
 import {Link} from 'react-router';
+import PropTypes from 'prop-types';
  const PostStyle = {marginLeft:'25%', marginTop:'5%'};
 class ViewPost extends Component {
+
+    static contextTypes = {
+     router:PropTypes.object
+    }
 
    componentWillMount(){
    this.props.getPost(this.props.params.id);
    }
 
    onClickDelete(){
-       this.props.deletePost(this.props.params.id);
+       this.props.deletePost(this.props.params.id).then(
+       ()=> this.props.router.push("/"));
    }
 
     render(){
