@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import {reduxForm,Field} from 'redux-form';
-//const required = value => (value  ? undefined : 'Required')
+import {createPost} from '../actions/index'
 const CancelBtnStyle = {marginLeft:'1%'};
 
 const validate=
@@ -53,14 +53,17 @@ const renderField = ({
            </div>
    )
   };
+
+
  class NewPost extends Component {
 
-
+    
     render (){
+        const {handleSubmit} = this.props;
         return(<div>
            <h3>New Post</h3>
             <div  className="d-flex justify-content-around ">
-        <form className="w-50">
+        <form onSubmit = {handleSubmit(createPost)}className="w-50">
             <div className="form-group">
             <Field name="title"  component={renderField} label="title" />
                 </div>
@@ -85,4 +88,4 @@ const renderField = ({
 
 export default reduxForm({
 form:'newPost',validate
-},null,null)(NewPost);
+},null,{createPost})(NewPost);
