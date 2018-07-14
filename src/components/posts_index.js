@@ -16,7 +16,7 @@ class PostsIndex extends Component{
       return ( <Link to ={`/posts/${post.id}`}><li key={post.id} className="list-group-item list-group-item-action ">{post.title}<span className="float-right">jjj</span></li></Link>)
     }
     render(){
-        return <div style ={ListStyle} className="d-flex justify-content-center">
+        return <div  className="d-flex mx-auto">
             <div  className="list-group w-50 ">
           {this.props.posts.map(this.MappingList)}
      
