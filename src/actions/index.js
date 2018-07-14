@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+export const FETCH_POST ='FETCH_POST';
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const CREATE_POST = 'CREATE_POST';
 const BASE_URL = "http://reduxblog.herokuapp.com/api/posts";
@@ -34,7 +34,7 @@ export function getPost(id){
     const req = axios.get(URL);
 
     return{
-        type:CREATE_POST,
+        type:FETCH_POST,
         payload:req
     }
 }
