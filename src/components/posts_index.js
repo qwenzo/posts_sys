@@ -13,7 +13,7 @@ class PostsIndex extends Component{
     }
 
     MappingList(post){
-      return ( <Link to ={`/posts/${post.id}`}><li key={post.id} className="list-group-item list-group-item-action ">{post.title}<span className="float-right">jjj</span></li></Link>)
+      return ( <Link key={post.id} to ={`/posts/${post.id}`}><li  className="list-group-item list-group-item-action ">{post.title}<span className="float-right">jjj</span></li></Link>)
     }
     render(){
         return <div  className="d-flex mx-auto">

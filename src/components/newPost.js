@@ -1,6 +1,10 @@
 import React , {Component} from 'react';
 import {reduxForm,Field} from 'redux-form';
-import {createPost} from '../actions/index'
+import {createPost} from '../actions/index';
+import {Link} from 'react-router';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 const CancelBtnStyle = {marginLeft:'1%'};
 
 const validate=
@@ -55,15 +59,28 @@ const renderField = ({
   };
 
 
- class NewPost extends Component {
 
+
+ class NewPost extends Component {
+    
+
+    static contextTypes = {
+        router:PropTypes.object
+       }
+    
+    onSubmit(data){
+        console.log(this.props)
+        this.props.createPost(data).then(
+            ()=> this.props.router.push("/")
+        );
+    }
     
     render (){
         const {handleSubmit} = this.props;
         return(<div>
            <h3>New Post</h3>
             <div  className="d-flex justify-content-around ">
-        <form onSubmit = {handleSubmit(createPost)}className="w-50">
+        <form onSubmit = {handleSubmit(this.onSubmit.bind(this))}className="w-50">
             <div className="form-group">
             <Field name="title"  component={renderField} label="title" />
                 </div>
@@ -75,7 +92,7 @@ const renderField = ({
             <Field name="content"  component={renderFieldtextArea} label="content" />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
-                <button style={CancelBtnStyle} className="btn btn-danger">Cancel</button>
+               <Link to="/" ><button style={CancelBtnStyle} className="btn btn-danger">Cancel</button></ Link >
             </form>
             </div> 
             </div>)
@@ -84,8 +101,9 @@ const renderField = ({
     
 }
 
+NewPost = connect (null,{createPost}) (NewPost)
 
 
 export default reduxForm({
 form:'newPost',validate
-},null,{createPost})(NewPost);
+})(NewPost);
