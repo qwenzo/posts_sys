@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div >
-          <Link to="/posts/new"><div style ={NewPostStyle} className="float-right"><button className="btn btn-primary">New Post</button></div></Link>
+          <Link to="/posts/new"><div style ={NewPostStyle} className="pull-right"><button className="btn btn-primary">New Post</button></div></Link>
       {this.props.children}
       </div>
     );
