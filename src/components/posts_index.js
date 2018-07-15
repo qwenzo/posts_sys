@@ -17,8 +17,10 @@ class PostsIndex extends Component{
         const posts = this.props.posts;
        
         return <div  className="d-flex justify-content-center">
+       
             <div  className="list-group w-50 ">
-          {posts ? posts.map(this.MappingList):'Loading...'}
+            <h3>Posts</h3>
+          {posts ? posts.map(this.MappingList):<h3>Loading...</h3>}
      
    </div>
         </div>
