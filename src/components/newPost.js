@@ -78,9 +78,11 @@ const renderField = ({
     render (){
         const {handleSubmit} = this.props;
         return(<div>
-           <h3>New Post</h3>
-            <div  className="d-flex justify-content-around ">
+           
+            <div  className="d-flex justify-content-center ">
+            
         <form onSubmit = {handleSubmit(this.onSubmit.bind(this))}className="w-50">
+        <h3>New Post</h3>
             <div className="form-group">
             <Field name="title"  component={renderField} label="title" />
                 </div>
